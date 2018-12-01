@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/server.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/server.js",
+    "test": "snyk test --file=package.json",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "author": {
+    "name": "Kai Wedekind",
+    "email": "wedekind.kai@googlemail.com",
+    "url": "http://www.kaiwedekind.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.2.5",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2"
+  }
+}
